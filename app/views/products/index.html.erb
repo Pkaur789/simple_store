@@ -1,3 +1,4 @@
+
 <h1>Our Products</h1>
 
 <p>Total Products: <%= @products.count %></p>
@@ -5,7 +6,8 @@
 <ul>
   <% @products.each do |product| %>
     <li>
-      <h3><%= product.title %></h3>
+      <h3><%= link_to product.title, product_path(product) %></h3>
+
       <p>Description: <%= product.description %></p>
       <p>Price: $<%= product.price %></p>
       <p>Stock Quantity: <%= product.stock_quantity %></p>
